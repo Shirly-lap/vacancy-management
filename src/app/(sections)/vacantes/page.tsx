@@ -1,11 +1,12 @@
-import { IconLink } from '@/components/atoms/IconLink'
+
+import { Header } from '@/components/organisms/header/Header'
 import { icons } from '@/model/Icon'
 import React from 'react'
 
 export default function page() {
   return (
-    <div>
-      <IconLink path='/h' text='holaa' Icon={icons.search}  />
-    </div>
+    <>
+      <Header title='Vacantes' name='Agregar vancantes' color='blue' icon={icons.add} />
+    </>
   )
 }

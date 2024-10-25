@@ -1,9 +1,9 @@
+"use client"
 import { icons } from '@/model/Icon';  // Asegúrate de que los íconos estén bien importados
 import { IconLink } from '@/components/atoms/IconLink';
 import React from 'react';
 import { IconInput } from '@/components/molecules/IconInput';
 import styles from "./Navbar.module.scss";
-
 
 const navBarItems = [
   { path: "/vacantes", title: "Vacantes", iconType: icons.vacant },  // Los íconos se pasan como componentes JSX
@@ -23,7 +23,7 @@ export const Navbar = () => {
           />
         ))}
       </div>
-      <IconInput Icon={icons.search} />  
+      <IconInput Icon={icons.search}  colorIcon='#'/>  
     </nav>
   );
 }

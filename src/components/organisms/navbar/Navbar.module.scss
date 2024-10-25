@@ -17,6 +17,7 @@
 
     .linkIcon {
       width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -24,20 +25,24 @@
       text-decoration: none;
       color: $txt-gray-secundary;
       border-radius: 5rem;
+      font-weight: 600;
+
+
+
+      &.activePrimary {
+        background-color: $btn-purple-primary;
+        color: $txt-white ;
+      }
+
+      &.activeSecundary {
+        background-color: $btn-pink-primary;
+        color: $txt-white;
+      }
     }
 
 
   }
 
-  .activePrimary {
-    background-color: $btn-purple-primary;
-    color: $txt-white !important;
-  }
-
-  .activeSecundary {
-    background-color: $btn-pink-primary;
-    color: $txt-white !important;
-  }
 
   .containerIconInput {
     width: 20%;

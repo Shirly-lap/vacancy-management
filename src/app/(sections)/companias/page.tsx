@@ -1,11 +1,11 @@
-import { Button } from '@/components/atoms/Button'
+import { Header } from '@/components/organisms/header/Header'
+import { icons } from '@/model/Icon'
 import React from 'react'
 
 export default function page() {
   return (
-    <div>
-      <h1>companies</h1>
-      <Button styleClass='blue' label='hghgh' ></Button>
-    </div>
+    <>
+    <Header title='Compañias ' name='Agregar compañia' color='#fff' icon={icons.add}/>
+  </>
   )
 }
