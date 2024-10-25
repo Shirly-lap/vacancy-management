@@ -1,0 +1,49 @@
+@import "../../../assets/styles/variables.scss";
+
+.cardsList{
+
+}
+.crad {
+  width: 38.5%;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.4rem 0.5rem $border-gray;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .headerCrad {
+    font-size: 10.2px;
+    color: $txt-dark-gray;
+  }
+
+  // .descriptionCard {}
+
+  .cardFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+
+    .btn{
+      border-color: $border-gray;
+      border: 0.1rem solid $border-gray;
+      background-color: $bg-white-primary;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.3rem;
+      cursor: pointer;
+    }
+
+    .btnEdit{
+      color: $btn-purple-secundary;
+    }
+
+    .btnDelete{
+      color: $btn-red-primary;
+    }
+
+  }
+}
