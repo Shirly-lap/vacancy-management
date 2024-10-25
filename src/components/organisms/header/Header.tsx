@@ -9,15 +9,15 @@ interface HeaderProps {
   title: string;
   name: string;
   // icon: IconType
-  color: string;
+  btnColor: string;
   icon: IconType;
 }
 
-export const Header = ({title, name, color, icon}: HeaderProps) => {
+export const Header = ({title, name, icon, btnColor}: HeaderProps) => {
   return (
     <div className={style.container}>
     <Title label={title}></Title>
-    <IconButton Icon={icon} className={style.iconButton} text={name} color={color} colorButton={style.colorBtnPrimary}/>
+    <IconButton Icon={icon} className={style.iconButton} text={name}  colorButton={btnColor}/>
     {/* {icon} */}
 </div>
   )

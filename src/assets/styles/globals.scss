@@ -14,4 +14,11 @@ body {
     min-height: 100vh;
     background: linear-gradient(150deg, $bg-purple-primary, $bg-pink-primary, $bg-red-primary);
     overflow-y: hidden;
+    color: $txt-dark-gray;
+}
+
+.text-primary{
+    color: $txt-gray-primary;
+    font-size: 15px;
+    font-weight: 500;
 }

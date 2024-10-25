@@ -10,12 +10,12 @@ interface IconLink {
   path: string;
   text: string;
   Icon: IconType;
-  color?: string;
-
 }
-export const IconLink = ({ path, text, Icon, color = '#969191' }: IconLink) => {
+export const IconLink = ({ path, text, Icon }: IconLink) => {
   // const IconComponent = icons[iconType];
   const currentPath = usePathname();
+  console.log(currentPath);
+  
   const resolveClas =() =>{
     if(path === currentPath){
       if(currentPath.includes("vacantes")){
@@ -29,7 +29,7 @@ export const IconLink = ({ path, text, Icon, color = '#969191' }: IconLink) => 
 
   return (
     <Link href={path} className={`${style.linkIcon} ${resolveClas()}`} >
-      <Icon size="20" color={color}/>
+      <Icon size="20"  className={style.colorIcon}/>
       {text}
     </Link>
   )

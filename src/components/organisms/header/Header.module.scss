@@ -13,12 +13,20 @@
     color: $txt-white;
     cursor: pointer;
     font-weight: 600;
-
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
   .colorBtnPrimary{
     background-color: $btn-purple-primary;
     font-weight: 600;
+    padding: 5px;
+  }
 
+  .colorBtnSecondary{
+    background-color: $btn-pink-primary;
+    font-weight: 600;
+    padding: 5px;
   }
 }

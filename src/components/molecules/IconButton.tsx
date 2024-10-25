@@ -5,14 +5,14 @@ import { Button } from '../atoms/Button'
 interface IconButton{
   Icon: IconType,
   className: string,
-  color? : string
-  text: string
+  text?: string
   colorButton: string,
+  onClick?: () => void;
 }
-export const IconButton = ({Icon, className, color = "blue", text, colorButton}: IconButton) => {
+export const IconButton = ({Icon, className, text, colorButton, onClick}: IconButton) => {
   return (
-    <Button styleClass={`${className} ${colorButton}`} label={text}>
-      <Icon size="20" color={color}></Icon>
+    <Button styleClass={`${className} ${colorButton}`} label={text} onClick={onClick}>
+      <Icon size="20"></Icon>
     </Button>
   )
 }

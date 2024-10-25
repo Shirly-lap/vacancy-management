@@ -1,12 +1,16 @@
 import React from 'react'
 
-export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
+export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   styleClass: string;
-  label: string;
+  label?: string;
+  children?: React.ReactNode
 }
-export const Button = ({styleClass, label, ...rest}:IButtonProps) => {
+export const Button = ({ styleClass, label, children, ...rest }: IButtonProps) => {
 
   return (
-    <button className={styleClass} {...rest}>{label}</button>
+    <button className={styleClass} {...rest}>
+      {children}
+      {label}
+    </button>
   )
 }

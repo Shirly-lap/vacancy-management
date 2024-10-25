@@ -32,6 +32,7 @@
       &.activePrimary {
         background-color: $btn-purple-primary;
         color: $txt-white ;
+
       }
 
       &.activeSecundary {
@@ -39,10 +40,7 @@
         color: $txt-white;
       }
     }
-
-
   }
-
 
   .containerIconInput {
     width: 20%;
