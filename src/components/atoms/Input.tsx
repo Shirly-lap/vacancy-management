@@ -1,11 +1,9 @@
 import React from 'react'
 
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
-  styleClass: string;
-}
-export const Input = ({styleClass, ...rest}: InputProps) => {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{}
+export const Input = ({...rest}: InputProps) => {
   return (
-    <input className={styleClass} {...rest}/>
+    <input className="inputPrimary"{...rest}/>
   )
 }

@@ -1,6 +1,6 @@
 
 import { IconType } from "react-icons";
-import { IoIosArrowBack, IoIosArrowForward, IoIosSearch, IoMdAddCircleOutline } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoIosSearch, IoMdAddCircleOutline, IoMdClose } from "react-icons/io";
 import { LuBuilding2 } from "react-icons/lu";
 import { MdOutlineEdit } from "react-icons/md";
 import { PiSuitcase } from "react-icons/pi";
@@ -16,6 +16,7 @@ interface Iicons {
   search: IconType;
   arrowBack: IconType;
   arrowForward: IconType;
+  close: IconType,
 }
 
 
@@ -28,4 +29,5 @@ export const icons: Iicons = {
   search: IoIosSearch,
   arrowBack: IoIosArrowBack,
   arrowForward: IoIosArrowForward,
+  close: IoMdClose,
 }

@@ -11,13 +11,14 @@ interface HeaderProps {
   // icon: IconType
   btnColor: string;
   icon: IconType;
+  modal:() => void;
 }
 
-export const Header = ({title, name, icon, btnColor}: HeaderProps) => {
+export const Header = ({title, name, icon, btnColor, modal}: HeaderProps) => {
   return (
     <div className={style.container}>
     <Title label={title}></Title>
-    <IconButton Icon={icon} className={style.iconButton} text={name}  colorButton={btnColor}/>
+    <IconButton Icon={icon} className={style.iconButton} text={name}  colorButton={btnColor} onClick={modal}/>
     {/* {icon} */}
 </div>
   )
