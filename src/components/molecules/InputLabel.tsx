@@ -13,7 +13,7 @@ export const InputLabel = ({ inputType, labelInput }: InputLabelProps) => {
     <>
       <div className="container">
         <Label text={labelInput} />
-        <Input type={inputType} />
+        <Input type={inputType} styleClass='inputSecondary'/>
       </div>
     </>
   )
