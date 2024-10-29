@@ -1,9 +1,13 @@
 import React from 'react'
-import Companias from '@/components/templates/companias/Companias'
+import Companias from '@/components/templat/companias/Companias'
 
 export default function page() {
 
   return (
-    <Companias />
+    <>
+     <Companias/>
+    </>
   )
 }
+
+

@@ -8,7 +8,7 @@ export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
 export const Button = ({ styleClass, label, children, ...rest }: IButtonProps) => {
 
   return (
-    <button className={styleClass} {...rest}>
+    <button className={`btn-primary ${styleClass}`} {...rest}>
       {children}
       {label}
     </button>

@@ -6,7 +6,7 @@ interface IconButton{
   Icon: IconType,
   className: string,
   text?: string
-  colorButton: string,
+  colorButton?: string,
   onClick?: () => void;
 }
 export const IconButton = ({Icon, className, text, colorButton, onClick}: IconButton) => {

@@ -17,8 +17,46 @@ body {
     color: $txt-dark-gray;
 }
 
-.text-primary{
+.text-primary {
     color: $txt-gray-primary;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+textarea {
+    height: 60px;
+    border-radius: 3px;
+    border: 1px solid $border-gray;
+
+}
+
+.inputSecondary,
+select {
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid $border-gray;
+    gap: 20px;
+}
+
+.btn-primary {
+    color: $txt-white;
+    border-radius: 5px;
+    height: 30px;
+    border: none;
+    font-weight: 700;
+    align-items: center;
+}
+
+
+.formPrimary{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

@@ -1,0 +1,52 @@
+@import "../../../assets/styles/variables.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-weight: 500;
+
+
+  .modalContainer {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 30px;
+    justify-content: center;
+    background-color: $bg-white-primary;
+
+    .modalTitle {
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .btnIconSecondary{
+        color: $txt-dark-gray;
+        border-radius: 0;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.btnBgPrimary {
+  background-color: $btn-purple-secundary;
+  padding: 20px;
+  display: flex;
+justify-content: center;
+}
+
+.btnBgSecondary {
+  background-color: $btn-pink-primary;
+}

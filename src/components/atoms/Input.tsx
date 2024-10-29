@@ -6,6 +6,6 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
 }
 export const Input = ({styleClass, ...rest}: InputProps) => {
   return (
-    <input className={styleClass} {...rest}/>
+    <input className={`inputPrimary ${styleClass}`}{...rest}/>
   )
 }
