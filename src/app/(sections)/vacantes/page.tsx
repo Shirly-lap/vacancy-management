@@ -1,4 +1,4 @@
-import Vacantes from '@/components/templat/vacantes/Vacantes'
+import Vacantes from '@/components/template/vacantes/Vacantes'
 import React from 'react'
 
 export default function page() {
