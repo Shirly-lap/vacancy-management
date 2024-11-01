@@ -6,12 +6,13 @@ import style from "./Paginator.module.scss"
 
 
 interface IPaginatorProps {
-  currentPage: string,
-  totalPages: string,
+  currentPage: number,
+  totalPages: number,
   onPrev: () => void,
   onNext: () => void,
-
 }
+
+
 export const Paginator = ({ currentPage, totalPages, onPrev, onNext }: IPaginatorProps) => {
   return (
     <>
@@ -21,7 +22,6 @@ export const Paginator = ({ currentPage, totalPages, onPrev, onNext }: IPaginato
           <div className="pages">
             <Text label={`Pagina ${currentPage} de ${totalPages}`} />
           </div>
-
           <IconButton Icon={icons.arrowForward} className={style.btnNext} onClick={onNext} />
         </div>
       </div>
