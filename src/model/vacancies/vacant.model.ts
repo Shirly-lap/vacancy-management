@@ -12,6 +12,13 @@ export interface IGetVacantsRespone {
   empty: boolean;
 }
 
+export interface INewVacant{
+  title: string,
+  description: string,
+  status: string,
+  companyId: string
+}
+
 export interface Content {
   id: number;
   title: string;

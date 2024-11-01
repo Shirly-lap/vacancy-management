@@ -11,7 +11,11 @@ export interface IGetCompaniesRespone {
   first: boolean;
   empty: boolean;
 }
-
+export interface INewCompany {
+  name: string;
+  location: string;
+  contact: string;
+}
 export interface Content {
   id: string;
   name: string;

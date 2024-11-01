@@ -15,24 +15,66 @@ import { SelectLabel } from "@/components/molecules/SelectLabel";
 import { TextAreLabel } from "@/components/molecules/TextAreLabel";
 import { Form } from "@/components/organisms/form/Form";
 import { Paginator } from "@/components/organisms/paginator/Paginator";
+import { JobsService } from "@/services/jobs.service";
+import { useRouter, useSearchParams } from "next/navigation";
+import { IGetVacantsRespone } from "@/model/vacancies/vacant.model";
 
 
-export default function Vacantes() {
-const [modal, setModal] = useState<boolean>(false)
+interface IProps {
+  data: IGetVacantsRespone;
+}
+export default function Vacantes({ data }: IProps) {
+  const url = "vacants"
+  const [modal, setModal] = useState<boolean>(false)
 
+  const useVacantService = new JobsService()
+
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   const handleEdit = () => {
     console.log("actualizar");
   };
 
-  const handleDelete = () => {
-    console.log("eliminar");
+  const handleDelete = async (id: number) => {
+    const confirmation = confirm("Seguro que quieres eliminar?")
+
+    if (!confirmation) return
+
+    try {
+      await useVacantService.delete(id, url)
+      router.refresh()
+    } catch (error) {
+      console.log(error);
+      throw error
+    }
   };
 
   const add = () => {
     setModal(!modal)
 
   }
+
+  const [currentPage, setCurrentPage] = useState(data.pageable.pageNumber + 1);
+  const totalPages = data.totalPages;
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prev) => prev - 1);
+      const params = new URLSearchParams(searchParams.toString());
+      params.set('page', (currentPage - 1).toString());
+      router.push(`?${params.toString()}`);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prev) => prev + 1);
+      const params = new URLSearchParams(searchParams.toString());
+      params.set('page', (currentPage + 1).toString());
+      router.push(`?${params.toString()}`);
+    }
+  };
   return (
     <>
       <Header
@@ -58,22 +100,26 @@ const [modal, setModal] = useState<boolean>(false)
           <SelectLabel label="Compañía" id="state" name="estado">
             <option value="">Selecciona una compañía</option>
           </SelectLabel>
-          
+
           <Button type="submit" styleClass={styleModal.btnBgPrimary} label="Agregar" />
         </Form>
       </Modal>
       <div className={styleCrad.cardsList}>
-        <Card
-          title="Desarrollador Frontend"
-          onEdit={handleEdit}
-          onDelete={handleDelete}
-        >
-          <Text label="Se busca desarrolador con experiencia en React" />
-          <Text label="Estado: OPEN " />
-          <Text label="Compañia: TechCorp" />
-        </Card>
+        {data.content.map((vacante, index) => (
+          <Card
+            title={vacante.title}
+            onEdit={handleEdit}
+            onDelete={() => handleDelete(vacante.id)}
+            key={index}
+          >
+            <Text label={vacante.description} />
+            <Text label={`Estado: ${vacante.status} `} />
+            <Text label={`Compañia: ${vacante.company.name}`} />
+          </Card>
+        ))}
+
       </div>
-      <Paginator currentPage="34" totalPages="100" onNext={handleDelete} onPrev={handleDelete}/>
+      <Paginator currentPage={currentPage} totalPages={totalPages} onNext={handleNextPage} onPrev={handlePrevPage} />
 
 
     </>
