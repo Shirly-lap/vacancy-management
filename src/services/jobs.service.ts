@@ -22,7 +22,7 @@ export class JobsService {
     }
   }
 
-  async create(url:string, body: INewCompany) {
+  async create(url:string, body: INewCompany | INewVacant) {
     try {
       const response = this.httpJob.post<Content, INewCompany | INewVacant>(url, body);
       return response

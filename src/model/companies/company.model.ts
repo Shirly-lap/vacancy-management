@@ -21,9 +21,15 @@ export interface Content {
   name: string;
   location: string;
   contact: string;
-  vacants: any[];
+  vacants: Vacant[];
 }
 
+export interface Vacant {
+  id:          number;
+  title:       string;
+  description: string;
+  status:      string;
+}
 export interface Pageable {
   pageNumber: number;
   pageSize: number;

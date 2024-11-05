@@ -18,6 +18,7 @@ import { Paginator } from "@/components/organisms/paginator/Paginator";
 import { JobsService } from "@/services/jobs.service";
 import { useRouter, useSearchParams } from "next/navigation";
 import { IGetVacantsRespone } from "@/model/vacancies/vacant.model";
+import VacantsForm from "@/components/organisms/vacantsForm/VacantsForm";
 
 
 interface IProps {
@@ -86,23 +87,7 @@ export default function Vacantes({ data }: IProps) {
       />
 
       <Modal className="addVancantes" title="Agregar vacante" onClose={add} state={modal}>
-        <Form>
-          <InputLabel labelInput="Titulo" inputType="text" />
-
-          <TextAreLabel label="Descripción" name="" id="">
-          </TextAreLabel>
-
-          <SelectLabel label="Estado" id="state" name="estado">
-            <option value="">Open</option>
-            <option value="">Close</option>
-          </SelectLabel>
-
-          <SelectLabel label="Compañía" id="state" name="estado">
-            <option value="">Selecciona una compañía</option>
-          </SelectLabel>
-
-          <Button type="submit" styleClass={styleModal.btnBgPrimary} label="Agregar" />
-        </Form>
+        <VacantsForm  />
       </Modal>
       <div className={styleCrad.cardsList}>
         {data.content.map((vacante, index) => (
